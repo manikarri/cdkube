@@ -32,7 +32,7 @@ script {
                   script {
                     sh ' echo $tag '
                     sh ('aws eks update-kubeconfig --name eksdemo1 --region ap-south-1')
-                   /sh  "sed -i 's/latest/${VERSION}/p' appdeploy.yaml"
+                   sh  "sed -i 's/latest/${VERSION}/p' appdeploy.yaml"
                     sh "/tmp/kubectl apply -f appdeploy.yaml"
                 }
                 }
