@@ -24,7 +24,7 @@ script {
       steps {
  withAWS(credentials: 'awscred', region: 'ap-south-1') {
                   script {
-                    def tag = 22.7-$BUILD_NUMBER
+                    def tag = 22.7-${env.BUILD_NUMBER}
                     sh ' echo $tag '
                     sh ('aws eks update-kubeconfig --name eksdemo1 --region ap-south-1')
                    // sh  'sed -i 's/latest/$tag/p' appdeploy.yaml'
