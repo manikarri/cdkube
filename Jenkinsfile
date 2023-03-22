@@ -27,7 +27,7 @@ script {
                     env.tag = 22.7-$BUILD_NUMBER
                     sh '  echo $tag '
                     sh ('aws eks update-kubeconfig --name eksdemo1 --region ap-south-1')
-                    sh  'sed -i 's/latest/$tag/p' appdeploy.yaml'
+                   // sh  'sed -i 's/latest/$tag/p' appdeploy.yaml'
                     sh "/tmp/kubectl apply -f appdeploy.yaml"
                 }
                 }
